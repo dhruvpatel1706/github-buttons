@@ -1,0 +1,21 @@
+.btn,
+.social-count {
+  height: 16px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.social-count {
+  margin-left: 6px;
+
+  b,
+  i {
+    margin: -5px 0 0 -5px;
+    border-width: 5px 5px 5px 0;
+  }
+
+  i {
+    margin-left: -4px;
+  }
+}

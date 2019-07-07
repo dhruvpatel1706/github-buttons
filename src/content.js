@@ -1,4 +1,5 @@
-import cssText from './buttons.scss'
+import baseCssText from './scss/base.scss'
+import largeCssText from './scss/large.scss'
 import { createElementInDocument } from './util'
 import { apiBaseURL } from './config'
 import { octicon } from './octicons'
@@ -10,6 +11,9 @@ export const render = function (root, options, func) {
   const style = root.appendChild(createElement('style', {
     type: 'text/css'
   }))
+
+  const cssText = baseCssText + (/^large$/i.test(options['data-size']) ? largeCssText : '')
+
   /* istanbul ignore if: IE lt 9 */
   if (style.styleSheet) {
     style.styleSheet.cssText = cssText
@@ -35,7 +39,7 @@ export const render = function (root, options, func) {
   }
 
   const widget = root.appendChild(createElement('div', {
-    className: 'widget' + (/^large$/i.test(options['data-size']) ? ' lg' : '')
+    className: 'widget'
   }, [
     btn
   ]))
